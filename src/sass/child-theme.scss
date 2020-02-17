@@ -1,0 +1,11 @@
+// --- Parent Theme
+
+@import "mybooking-wp-theme/theme"; 
+
+// ----- Child theme
+
+// Child theme variables (add custom variables here)
+@import "theme/child_theme_variables"; 
+
+// Child theme styles (add custom styles here)
+@import "theme/child_theme";                 

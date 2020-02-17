@@ -1,0 +1,124 @@
+//==============================================
+// Module/inputs, forms, textarea
+//==============================================
+
+select {
+  border-radius: 0px;
+  padding: 0 0.8rem;
+  text-indent: 1px;
+  text-overflow: "";
+  border: 0;
+  font-size: 0.8rem;
+  height: 48px;
+  color: $gray-700;
+  background-color: #fff;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    border: 0;
+  }
+}
+// Machacando estilos de formulario de Bootstrap para el form completar datos
+// También sobreescribo mis propias reglas pues en este caso quiero un borde gris rounded
+.input-group > .form-control {
+  height: 48px;
+}
+.form-group select.form-control {
+  border: 1px solid $gray-400;
+  border-radius: 3px;
+  box-shadow: none;
+  display: inline-flex;
+  padding: 0 0.8rem;
+  font-size: 0.8rem;
+  line-height: 18px;
+  color: $gray-700;
+  height: 48px;
+  margin-top: 8px;
+}
+.input-group-prepend > .input-group-text {
+  border-radius: 0;
+}
+.card,
+.btn,
+.form-control {
+  border-radius: 0;
+}
+
+// Machacando estilos de jquery ui para el form completar datos
+input[type="text"],
+input[type="password"],
+.ui-autocomplete-input,
+textarea,
+.uneditable-input {
+  display: inline-flex;
+  padding: 0 0.8rem;
+  font-size: 0.8rem;
+  line-height: 18px;
+  color: $gray-700;
+  height: 48px;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+.custom-form {
+  input[type="text"],
+  input[type="password"],
+  .ui-autocomplete-input,
+  textarea,
+  .uneditable-input {
+    border: 1px solid $gray-400;
+    border-radius: 3px;
+  }
+}
+// Custom icon para los arrow-down en los select maquetados con Bootstrap
+label {
+  position: relative;
+}
+.custom-icon {
+  position: absolute;
+  font-size: 18px;
+  color: $gray-700;
+  right: 8px;
+  top: 48px;
+}
+.custom-icon-select {
+  @extend .custom-icon;
+  top: 16px;
+}
+
+.form-reservation-error {
+  color: #dc3545;
+}
+input.form-reservation-error {
+  border-color: #dc3545 !important;
+}
+// Form Dates
+.custom-date-form {
+  display: flex;
+  select {
+    padding-right: 30px !important;
+  }
+  .fas,
+  .fa {
+    margin-left: -20px;
+  }
+}
+.custom-date-form > div:nth-child(2n) {
+  margin: 0 5px;
+}
+.custom-date-item {
+  display: flex;
+  align-items: baseline;
+  flex-grow: 1;
+  select.form-control {
+    margin-top: 0;
+  }
+}
+// Extra inputs
+.input-group > .form-control.extra-input {
+  border-top: 1px solid #6c757d;
+  border-bottom: 1px solid #6c757d;
+}

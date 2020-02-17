@@ -1,0 +1,182 @@
+//==============================================
+// Module/ form selector
+//==============================================
+
+// Vertical Selector
+
+.flex-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  background-color: $transparent-white;
+  padding: 10px;
+  z-index: 10000;
+  color: #333;
+}
+
+.flex-form-sticky {
+  @extend .flex-form;
+  align-items: end;
+  flex-direction: row;
+  background-color: $gray-300;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  .btn {
+    height: 48px;
+    margin-top: 27px;
+  }
+  input.hasDatepicker {
+    max-width: 130px;
+  }
+  label {
+    font-size: 13px;
+  }
+}
+
+.flex-form-item-box {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 5px;
+}
+
+.flex-form-item {
+  display: flex;
+  select {
+    width: 100%;
+    min-width: 70px;
+  }
+}
+
+.flex-icon {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  background-color: #fff;
+  padding: 0.8rem;
+  height: 48px;
+  color: $gray-700;
+}
+
+// Horizontal Selector
+
+.flex-form-horizontal {
+  display: flex;
+  flex-direction: column;
+  background-color: $transparent-white;
+  padding: 10px;
+  color: #333;
+}
+.flex-form-group-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 2;
+}
+.flex-form-group {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  input.hasDatepicker {
+    flex-grow: 1;
+  }
+}
+.flex-form-horizontal-box {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.flex-form-horizontal-item {
+  display: flex;
+  select {
+    display: flex;
+    flex-grow: 1;
+  }
+}
+.flex-form-group:nth-child(1n) {
+  margin-right: 5px;
+}
+.flex-form-group:nth-child(2n) {
+  margin-left: 5px;
+}
+.flex-form-sticky {
+  .flex-form-group {
+    flex-direction: row;
+  }
+  .flex-form-horizontal-box:last-child {
+    margin-left: 5px;
+    flex-grow: 1;
+    align-self: flex-end;
+  }
+}
+.flex-form-horizontal.flex-form-sticky {
+  background-color: $gray-300;
+  flex-direction: row;
+}
+
+// Checkbox
+
+.button-group-pills {
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  .btn {
+    height: auto !important;
+    margin-top: 0 !important;
+    padding: 0.3rem;
+    cursor: pointer;
+    border-radius: 25px;
+    line-height: 1;
+    background-color: $brand-primary;
+    color: #fff;
+    width: 100px;
+    font-size: 12px;
+    transition: 0.2s ease-in-out;
+    &:hover {
+      background-color: darken($brand-primary, 10%);
+      color: #fff;
+    }
+    &.active {
+      background-color: #fff;
+      color: $brand-primary;
+      box-shadow: none;
+    }
+  }
+}
+
+// Media Queries
+
+@media (max-width: 575.98px) {
+  .flex-form,
+  .flex-form-horizontal {
+    min-width: 100vw;
+  }
+  input.hasDatepicker {
+    max-width: 130px;
+  }
+}
+
+@media (min-width: 768px) {
+  .flex-form-group-wrapper {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 992px) {
+  .flex-form,
+  .flex-form-horizontal {
+    width: 100vw;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .flex-form-horizontal-item select {
+    width: 100px;
+  }
+}

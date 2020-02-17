@@ -1,0 +1,40 @@
+/*
+base styles
+*/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  color: $black;
+}
+
+.btn {
+  cursor: pointer;
+}
+button,
+[type="button"] {
+  -webkit-appearance: none;
+  border: none;
+}
+
+a {
+  color: $brand-primary;
+  transition: ease-in-out 0.25s;
+  &:hover {
+    color: darken($brand-primary, 10%);
+    text-decoration: none;
+  }
+}
