@@ -2,7 +2,7 @@
 /**
 *		GLOBAL FUNCTIONS
 *  	----------------
-*		Overrides parent document on Understrap Theme
+*		Overrides parent document on Mybooking Theme
 *
 * 	Versión: 0.0.1
 *   @package WordPress

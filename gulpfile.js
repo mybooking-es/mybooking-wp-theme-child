@@ -34,6 +34,13 @@ gulp.task("watch", function() {
 
 // ---------- SASS + CSS MANAGEMENT ---------------------------
 
+// Copy jQuery UI images into dist images folder
+gulp.task("cssimages", function() {
+  return gulp
+    .src(paths.dev + "/sass/vendor/jquery.ui.custom/images/*.{jpg,gif,png}")
+    .pipe(gulp.dest(paths.css + "/images"));
+});
+
 // Run:
 // gulp sass
 // Compiles SCSS files in CSS
@@ -80,7 +87,7 @@ gulp.task("minifycss", function() {
 // Run:
 // gulp styles
 // Compile Sass and minify css
-gulp.task("styles", gulp.series("sass", "minifycss"));
+gulp.task("styles", gulp.series("sass", "minifycss", "cssimages"));
 
 // ---------- Local Server  -------------------------------------------------
 
