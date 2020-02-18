@@ -17,33 +17,30 @@ defined( 'ABSPATH' ) || exit;
  * Internacionalization
  *
  */
-function mybooking_setup(){
+function mybooking_child_theme_setup(){
     $domain = 'mybooking';
     load_child_theme_textdomain( $domain, get_stylesheet_directory() . '/languages' );
     // wp-content/themes/mybooking/languages/
     load_child_theme_textdomain( $domain, get_template_directory() . '/languages' );
 }
-add_action( 'after_setup_theme', 'mybooking_setup' );
+add_action( 'after_setup_theme', 'mybooking_child_theme_setup' );
 
 /**
- * Mybooking remove scripts (remove theme styles)
+ * Mybooking remove scripts (remove parent theme styles and scripts)
  */
-function mybooking_remove_scripts() {
+function mybooking_theme_remove_scripts() {
     wp_dequeue_style( 'mybooking-styles' );
     wp_deregister_style( 'mybooking-styles' );
-
     wp_dequeue_script( 'mybooking-scripts' );
     wp_deregister_script( 'mybooking-scripts' );
-
     // Removes the parent themes stylesheet and scripts from inc/enqueue.php
 }
-add_action( 'wp_enqueue_scripts', 'mybooking_remove_scripts', 20 );
+add_action( 'wp_enqueue_scripts', 'mybooking_theme_remove_scripts', 20 );
 
 /**
  * Enqueue new CSS & scripts
- *
  */
-function theme_enqueue_styles() {
+function mybooking_child_theme_enqueue_styles() {
 
 	// Get the theme data
 	$the_theme = wp_get_theme();
@@ -55,4 +52,4 @@ function theme_enqueue_styles() {
   wp_enqueue_script( 'mybooking-child-scripts', get_stylesheet_directory_uri() . '/js/child-theme.min.js', array(), $the_theme->get( 'Version' ), true );
 
 }
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'mybooking_child_theme_enqueue_styles' );
